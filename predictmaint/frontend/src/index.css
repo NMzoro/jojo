@@ -1,0 +1,252 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: 16px;
+  background: #ffffff;
+}
+
+body {
+  @apply bg-white text-ink font-sans antialiased;
+  margin: 0;
+  min-width: 320px;
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+::selection {
+  background: #fbd2d9;
+  color: #7d0b1c;
+}
+
+/* Scrollbars discrètes type logiciel industriel */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f7f8;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border: 2px solid #f7f7f8;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+@layer components {
+  .panel {
+    @apply bg-panel border border-line shadow-card rounded-sm overflow-hidden;
+  }
+
+  .panel-head {
+    @apply flex items-center justify-between gap-4 bg-head px-5 py-3.5 border-b-2 border-brand;
+  }
+
+  .panel-title {
+    @apply text-base font-bold uppercase tracking-wide text-ink;
+  }
+
+  .panel-subtitle {
+    @apply text-sm text-muted mt-0.5;
+  }
+
+  .panel-body {
+    @apply p-5;
+  }
+
+  .num {
+    @apply font-mono tabular-nums;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .label {
+    @apply block text-sm font-semibold uppercase tracking-wide text-muted mb-2;
+  }
+
+  .input {
+    @apply h-11 w-full rounded-sm border border-line bg-white px-3 text-base text-ink num
+      outline-none transition-colors duration-150 placeholder:text-gray-400
+      focus:border-brand focus:ring-2 focus:ring-brand/15;
+  }
+
+  .select {
+    @apply h-11 w-full rounded-sm border border-line bg-white px-3 text-base text-ink
+      outline-none transition-colors duration-150 focus:border-brand focus:ring-2 focus:ring-brand/15;
+  }
+
+  .btn {
+    @apply inline-flex h-11 items-center justify-center gap-2 rounded-sm border border-line bg-white
+      px-5 text-base font-semibold text-body transition-all duration-150
+      hover:border-brand/40 hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand/20
+      disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-icon {
+    @apply h-11 w-11 px-0;
+  }
+
+  .btn-primary {
+    @apply border-brand bg-brand text-white hover:bg-brand-600 hover:border-brand-600 hover:text-white
+      shadow-card;
+  }
+
+  .btn-ghost {
+    @apply border-transparent bg-transparent hover:bg-brand-50;
+  }
+
+  .btn-danger {
+    @apply border-brand/30 bg-brand-50 text-brand hover:bg-brand hover:text-white;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-2 rounded-sm border px-2 py-1 text-sm
+      font-bold uppercase tracking-wide;
+  }
+
+  .hmi-table {
+    @apply w-full border-collapse text-left text-base;
+  }
+
+  .hmi-table thead th {
+    @apply sticky top-0 z-10 h-12 border-b border-line bg-head px-4 py-3 text-sm
+      font-bold uppercase tracking-wide text-muted whitespace-nowrap;
+  }
+
+  .hmi-table tbody td {
+    @apply h-12 border-b border-line/80 px-4 py-3 text-base text-body align-middle;
+  }
+
+  .hmi-table tbody tr {
+    @apply transition-colors duration-150 hover:bg-brand-50/40;
+  }
+
+  .hmi-table tbody tr.selected {
+    @apply bg-brand-50/70;
+  }
+
+  .stat-value {
+    @apply num text-5xl leading-none font-bold text-ink;
+  }
+}
+
+/* Liseré supérieur rouge sous la barre de navigation */
+.topbar-accent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: #e41937;
+}
+
+/* Grille technique très discrète pour le fond HMI */
+.hmi-grid {
+  background-image: linear-gradient(to right, rgba(17, 24, 39, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 24, 39, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.probability-track {
+  @apply h-3 w-full overflow-hidden rounded-full bg-gray-200;
+}
+.probability-fill {
+  @apply h-full rounded-full transition-all duration-300 ease-out;
+}
+
+.led {
+  @apply inline-block rounded-full;
+}
+
+.led-ring {
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+}
+.led-ring-alarm {
+  box-shadow: 0 0 0 4px rgba(228, 25, 55, 0.15);
+}
+.led-ring-watch {
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.18);
+}
+
+.gauge-label {
+  @apply text-sm font-semibold uppercase tracking-wide text-muted;
+}
+
+.nav-item {
+  @apply relative flex items-center gap-3 rounded-sm px-4 py-3 text-base font-semibold
+    text-body transition-colors duration-150 hover:bg-brand-50/70 hover:text-brand;
+}
+.nav-item.active {
+  @apply bg-brand-50 text-brand;
+}
+.nav-item.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  border-radius: 2px;
+  background: #e41937;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+.tab-btn {
+  @apply inline-flex h-11 items-center justify-center rounded-sm border border-line bg-white px-5
+    text-base font-bold uppercase tracking-wide text-muted transition-colors duration-150
+    hover:border-brand/40 hover:text-brand;
+}
+.tab-btn.active {
+  @apply border-brand bg-brand text-white hover:text-white;
+}
+
+.kpi-accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+
+.recharts-wrapper,
+.recharts-wrapper text,
+.recharts-wrapper .recharts-text {
+  font-family: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+@media print {
+  aside,
+  header,
+  .no-print {
+    display: none !important;
+  }
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .panel {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+}

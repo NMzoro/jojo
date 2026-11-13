@@ -1,0 +1,47 @@
+{
+  "pages": {
+    "machines": {
+      "title": "PredictMaint — Maintenance prédictive",
+      "h1": "Parc machines",
+      "panels": 1
+    },
+    "prediction": {
+      "title": "PredictMaint — Maintenance prédictive",
+      "h1": "Prédiction unitaire & par lot",
+      "panels": 2
+    },
+    "modeles": {
+      "title": "PredictMaint — Maintenance prédictive",
+      "h1": "Modèles & métriques",
+      "panels": 8
+    },
+    "alarmes": {
+      "title": "PredictMaint — Maintenance prédictive",
+      "h1": "Journal des alarmes",
+      "panels": 1
+    },
+    "rapports": {
+      "title": "PredictMaint — Maintenance prédictive",
+      "h1": "Rapports & exports",
+      "panels": 4
+    },
+    "parametres": {
+      "title": "PredictMaint — Maintenance prédictive",
+      "h1": "Paramètres du système",
+      "panels": 4
+    },
+    "journal-api": {
+      "title": "PredictMaint — Maintenance prédictive",
+      "h1": "Journal API",
+      "panels": 1
+    }
+  },
+  "errors": [],
+  "live_label": "PREDICTMAINT\n\nMAINTENANCE PRÉDICTIVE\n\nSUPERVISION EN TEMPS RÉEL\n\nLIVE · 2 S\nAPI connectée\nMODÈLE ACTIF\nRandom Forest\n57 ms\n23:06:53\n12 NOV.\nSuperviseur\nLIGNE 2",
+  "machine_cards": 8,
+  "kpi_count": 4,
+  "injection_toast": 4,
+  "prediction_ok": true,
+  "prediction_has_probability": true,
+  "final_url": "http://127.0.0.1:8000/"
+}

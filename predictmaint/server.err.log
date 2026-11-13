@@ -1,0 +1,32 @@
+INFO:     Started server process [23216]
+INFO:     Waiting for application startup.
+2026-11-12 23:29:18,288 | INFO     | predictmaint.api | Démarrage de PredictMaint API 1.0.0
+2026-11-12 23:29:18,350 | INFO     | predictmaint.db | Base SQLite prête : C:\Users\med\Desktop\jk\predictmaint\data\predictmaint.db
+2026-11-12 23:29:18,353 | INFO     | predictmaint.service | Chargement du modèle : C:\Users\med\Desktop\jk\predictmaint\resultats_projet\modele_retenu.joblib
+2026-11-12 23:29:24,475 | INFO     | predictmaint.service | Modèle chargé : Random Forest
+2026-11-12 23:29:24,488 | INFO     | predictmaint.simulator | Catalogue machines chargé : C:\Users\med\Desktop\jk\predictmaint\backend\machines.json (8)
+2026-11-12 23:29:24,514 | INFO     | predictmaint.simulator | Pools : 9661 normales, 339 défaillances
+2026-11-12 23:29:24,698 | INFO     | predictmaint.simulator | Scénarios à haut risque : 268 / 339 (probabilité >= 0.75)
+2026-11-12 23:29:24,723 | INFO     | predictmaint.simulator | Simulateur démarré (intervalle 2 s)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:59079 - "WebSocket /ws/live" [accepted]
+INFO:     connection open
+2026-11-12 23:29:29,608 | INFO     | predictmaint.simulator | Client temps réel connecté (1)
+INFO:     127.0.0.1:61019 - "WebSocket /ws/live" [accepted]
+INFO:     connection open
+2026-11-12 23:29:34,058 | INFO     | predictmaint.simulator | Client temps réel connecté (2)
+2026-11-12 23:29:42,166 | INFO     | predictmaint.simulator | Client temps réel déconnecté (1 restants)
+2026-11-13 00:05:06,449 | INFO     | predictmaint.simulator | Client temps réel déconnecté (0 restants)
+INFO:     127.0.0.1:57399 - "WebSocket /ws/live" [accepted]
+INFO:     connection open
+2026-11-13 00:05:08,986 | INFO     | predictmaint.simulator | Client temps réel connecté (1)
+INFO:     127.0.0.1:54561 - "WebSocket /ws/live" [accepted]
+INFO:     connection open
+2026-11-13 00:05:10,147 | INFO     | predictmaint.simulator | Client temps réel connecté (2)
+INFO:     127.0.0.1:61262 - "WebSocket /ws/live" [accepted]
+INFO:     connection open
+2026-11-13 00:05:10,262 | INFO     | predictmaint.simulator | Client temps réel connecté (3)
+2026-11-13 00:05:10,696 | INFO     | predictmaint.simulator | Client temps réel déconnecté (2 restants)
+2026-11-13 00:05:10,701 | INFO     | predictmaint.simulator | Client temps réel déconnecté (1 restants)
+2026-11-13 00:09:03,097 | INFO     | predictmaint.simulator | Client temps réel déconnecté (0 restants)
